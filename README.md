@@ -1,3 +1,3 @@
 How Green Is My City
 
-Github repository of project
+Github repository of the project

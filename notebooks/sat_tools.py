@@ -35,6 +35,13 @@ def create_shapefile_from_geo_coordinates(filename, fieldname, N_lat, S_lat, W_l
    w.record('polygon1')
    w.close()
 
+from shapely.geometry import Point
+
+def create_list_of_points_from_geo_coordinates(N_lat, S_lat, W_long, E_long):
+   # create a simple list of polygon points corresponding to GPS coordinates of the area of interest
+   # Latitude and longitude of area of interest can be found with www.openstreetmap.org -> Export
+   return (Point(W_long, N_lat), Point(E_long, N_lat), Point(E_long, S_lat), Point(W_long, S_lat))
+
 
 import os
 import zipfile
@@ -47,4 +54,53 @@ def extractFile(path,dest):
   #checking if the folder zip exists
   assert os.path.exists(dest) == True
 
+def crop_area(src, area_shape, fileout):
+  '''
+  Crop a multispectral image given a shape as input. Write result in a file.
+  inputs: 
+    src: a rasterio dataset containing multispectral image
+    area_shape : a shapefile
+    fileout: output filename
+  output:
+    None
+  '''
+  out_image, out_transform = rasterio.mask.mask(src, area_shape.geometry,crop=True)
+  out_meta = src.meta.copy()
+  out_meta.update({"driver": "GTiff",
+                 "height": out_image.shape[1],
+                 "width": out_image.shape[2],
+                 "transform": out_transform})
+    
+  with rasterio.open(fileout, "w", **out_meta) as dest:
+    dest.write(out_image)
 
+
+from rasterio.warp import calculate_default_transform, reproject, Resampling
+
+def change_image_projection(filename, outfilename, dst_crs):
+  '''Function comes from here:
+  https://rasterio.readthedocs.io/en/latest/topics/reproject.html?highlight=warp
+  Reprojecting a GeoTIFF dataset from one coordinate reference system (CRS)
+  to another one'''
+  with rasterio.open(filename) as src:
+    transform, width, height = calculate_default_transform(
+        src.crs, dst_crs, src.width, src.height, *src.bounds)
+    kwargs = src.meta.copy()
+    kwargs.update({
+        'crs': dst_crs,
+        'transform': transform,
+        'nodata': 0.0, # set of 0.0 instead of -9999.0 so that green rectangle does not appear when ploting with folium
+        'width': width,
+        'height': height
+    })
+
+    with rasterio.open(outfilename, 'w', **kwargs) as dst:
+      for i in range(1, src.count + 1):
+        reproject(
+                source=rasterio.band(src, i),
+                destination=rasterio.band(dst, i),
+                src_transform=src.transform,
+                src_crs=src.crs,
+                dst_transform=transform,
+                dst_crs=dst_crs,
+                resampling=Resampling.nearest)

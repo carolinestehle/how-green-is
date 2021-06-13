@@ -45,9 +45,15 @@ a convolutional network model classically used for biomedical image segmentation
 The network consists of a contracting path and an expansive path, which gives it the u-shaped architecture. The contracting path is a typical convolutional network that consists of repeated application of convolutions, each followed by a rectified linear unit (ReLU) and a max pooling operation. During the contraction, the spatial information is reduced while feature information is increased. The expansive pathway combines the feature and spatial information through a sequence of up-convolutions and concatenations with high-resolution features from the contracting path 
 
 **Pixel-Wise Classification Using Deep Neural Networks:**
+A basic architecture of the NN 
+![bands](https://user-images.githubusercontent.com/72912247/121820860-4a14c280-cc95-11eb-8648-6ab28852ba7d.jpeg)
+
+Pixel-wise classification is a fundamental task in remote sensing that aims at assigning a semantic
+class, e.g., vegetation, accurately to every individual pixel of an image.
 
 
+**Project Steps:**
 
-
+![steps](https://user-images.githubusercontent.com/72912247/121821154-79c4ca00-cc97-11eb-87d9-c45aab7ced9a.JPG)
 
 

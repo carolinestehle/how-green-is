@@ -37,12 +37,39 @@ Cartography/map datasets:
 - Corine land cover
 
 
-# Methods Used
+**Project Steps:**
+
+![steps](https://user-images.githubusercontent.com/72912247/121821154-79c4ca00-cc97-11eb-87d9-c45aab7ced9a.JPG)
+
+
+
+**Using OSM to Create sat images and OSD shapes 
+
+1.Receive any coordinate set or place name and get a coordinate set for data download.
+2.Change the area of interest interactively with folium !!NEW!!
+3.Retrieve a geopadas dataframe with a set of polygons or multipolygons of green areas identified in the Open Street Map public database.
+4.Retrieve images from earth engine of of Sentinel 2 Satellites/Landsat8 
+5.Create a mask of 0 and 1 for green areas of the coordinate area identified above and of the dataframe created on 2 or any other geopandas dataframe with a list of polygons identifing green areas and save as a one band TIF file on google drive.
+
+
+![io](https://user-images.githubusercontent.com/72912247/121821733-2a809880-cc9b-11eb-8fe2-20c48ef24d6a.JPG)
+
+
+
+
+
+
+
+
+# Methods Attempted 
 **implementing UNet:**
 a convolutional network model classically used for biomedical image segmentation with the Functional API
 ![unet](https://user-images.githubusercontent.com/72912247/121819354-da9ad500-cc8c-11eb-9bb8-3737330143e9.png)
 
 The network consists of a contracting path and an expansive path, which gives it the u-shaped architecture. The contracting path is a typical convolutional network that consists of repeated application of convolutions, each followed by a rectified linear unit (ReLU) and a max pooling operation. During the contraction, the spatial information is reduced while feature information is increased. The expansive pathway combines the feature and spatial information through a sequence of up-convolutions and concatenations with high-resolution features from the contracting path 
+
+*insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
+
 
 **Pixel-Wise Classification Using Deep Neural Networks:**
 A basic architecture of the NN 
@@ -52,8 +79,6 @@ Pixel-wise classification is a fundamental task in remote sensing that aims at a
 class, e.g., vegetation, accurately to every individual pixel of an image.
 
 
-**Project Steps:**
-
-![steps](https://user-images.githubusercontent.com/72912247/121821154-79c4ca00-cc97-11eb-87d9-c45aab7ced9a.JPG)
+*insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
 
 

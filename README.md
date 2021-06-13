@@ -60,10 +60,6 @@ Cartography/map datasets:
 
 
 
-
-
-
-
 # Machine Learning Models Attempted:
 **implementing UNet:**
 a convolutional network model classically used for biomedical image segmentation with the Functional API
@@ -71,7 +67,8 @@ a convolutional network model classically used for biomedical image segmentation
 
 The network consists of a contracting path and an expansive path, which gives it the u-shaped architecture. The contracting path is a typical convolutional network that consists of repeated application of convolutions, each followed by a rectified linear unit (ReLU) and a max pooling operation. During the contraction, the spatial information is reduced while feature information is increased. The expansive pathway combines the feature and spatial information through a sequence of up-convolutions and concatenations with high-resolution features from the contracting path 
 
-*insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
+*Training
+*Inferance insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
 
 
 **Pixel-Wise Classification Using Deep Neural Networks:**
@@ -82,7 +79,10 @@ Pixel-wise classification is a fundamental task in remote sensing that aims at a
 class, e.g., vegetation, accurately to every individual pixel of an image.
 
 
-*insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
+
+*Training
+*Inferance insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
+
 
 
 **Conclusion - Next steps**

@@ -1,9 +1,7 @@
 #
 ## ML with Python Project
 
-
-![openerror](https://user-images.githubusercontent.com/72912247/121811005-3486a500-cc63-11eb-8007-8b4a14a58de9.JPG)
-
+![picgreen](https://user-images.githubusercontent.com/72912247/121811021-449e8480-cc63-11eb-90c6-9b8a4f6a8543.jpeg)
 
 
 

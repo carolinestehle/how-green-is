@@ -43,6 +43,13 @@ Cartography/map datasets:
 
 
 
+##step 1
+
+
+
+
+##step 2
+
 **Using OSM to Create sat images and OSD shapes**
 
 1.Receive any coordinate set or place name and get a coordinate set for data download.

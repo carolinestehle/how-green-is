@@ -37,7 +37,7 @@ Cartography/map datasets:
 - Corine land cover
 
 
-# Methods Used**
+# Methods Used
 **implementing UNet:**
 a convolutional network model classically used for biomedical image segmentation with the Functional API
 ![unet](https://user-images.githubusercontent.com/72912247/121819354-da9ad500-cc8c-11eb-9bb8-3737330143e9.png)

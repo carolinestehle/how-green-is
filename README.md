@@ -85,3 +85,8 @@ class, e.g., vegetation, accurately to every individual pixel of an image.
 *insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
 
 
+**Conclusion - Next steps**
+
+
+
+**Demo-Link**

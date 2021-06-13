@@ -1,10 +1,13 @@
 #
 ## ML with Python Project
+ ![Uploading picgreen.jpeg…]()
+
+
 
 # How green is my city ?
 
 #
-## Plant surface on city with satellite images.
+## Identifying Plant surface on city with satellite images.
 
 **Project summary:**
 

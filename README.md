@@ -18,7 +18,7 @@ Rapid and uncontrolled Urbanization along with economic and industrial developme
 
 
 **Project definition - Flow chart**
-![flow](https://user-images.githubusercontent.com/72912247/121817874-50e70980-cc84-11eb-8f9f-8aacc524d110.JPG)
+![flow](https://user-images.githubusercontent.com/72912247/121818590-65c59c00-cc88-11eb-8c6d-80f02a92b048.JPG)
 
 
 **Datasets**

@@ -38,32 +38,16 @@ Cartography/map datasets:
 
 
 **Methods Used**
-implementing UNet:a convolutional network model classically used for biomedical image segmentation with the Functional API
+# implementing UNet:
+a convolutional network model classically used for biomedical image segmentation with the Functional API
 ![unet](https://user-images.githubusercontent.com/72912247/121819354-da9ad500-cc8c-11eb-9bb8-3737330143e9.png)
 
 The network consists of a contracting path and an expansive path, which gives it the u-shaped architecture. The contracting path is a typical convolutional network that consists of repeated application of convolutions, each followed by a rectified linear unit (ReLU) and a max pooling operation. During the contraction, the spatial information is reduced while feature information is increased. The expansive pathway combines the feature and spatial information through a sequence of up-convolutions and concatenations with high-resolution features from the contracting path 
 
+# Pixel-Wise Classification Using Deep Neural Networks:
 
 
 
 
 
 
-
-
-**libraries to be used :**
-
-- Numpy.
-- Pandas, geopandas
-- Matplotlib
-- Scikit-learn, useful for general numeric data types.
-- scikit-image
-- Keras
-- TensorFlow.
-
-**Algorithms could be used:**
-
-- Convolutional neural network (ConvNets or CNNs) : one of the main categories to do images recognition, images classifications. Objects detections, recognition faces etc.
-- Mask R-CNN tools allows to train the model and use it for a detection of objects, It can be seen as a supervised classification using convolutional neural networks.
-- The Satellite Imagery Multiscale Rapid Detection with Windowed Networks (SIMRDWN) codebase combines some of the leading object detection algorithms into a unified framework designed to detect objects both large and small in overhead imagery
-- U-Net, a kind of Convolutional Neural Networks (CNN) approach.

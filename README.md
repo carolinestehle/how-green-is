@@ -43,12 +43,16 @@ Cartography/map datasets:
 
 
 
-**Using OSM to Create sat images and OSD shapes 
+**Using OSM to Create sat images and OSD shapes**
 
 1.Receive any coordinate set or place name and get a coordinate set for data download.
+
 2.Change the area of interest interactively with folium !!NEW!!
+
 3.Retrieve a geopadas dataframe with a set of polygons or multipolygons of green areas identified in the Open Street Map public database.
+
 4.Retrieve images from earth engine of of Sentinel 2 Satellites/Landsat8 
+
 5.Create a mask of 0 and 1 for green areas of the coordinate area identified above and of the dataframe created on 2 or any other geopandas dataframe with a list of polygons identifing green areas and save as a one band TIF file on google drive.
 
 
@@ -60,8 +64,7 @@ Cartography/map datasets:
 
 
 
-
-# Methods Attempted 
+# Machine Learning Models Attempted:
 **implementing UNet:**
 a convolutional network model classically used for biomedical image segmentation with the Functional API
 ![unet](https://user-images.githubusercontent.com/72912247/121819354-da9ad500-cc8c-11eb-9bb8-3737330143e9.png)

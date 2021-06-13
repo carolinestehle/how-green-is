@@ -17,19 +17,18 @@ This project is about identifying green areas in a given city , the user inputs 
 Rapid and uncontrolled Urbanization along with economic and industrial development, have increased the rate of land-cover change ,while green areas offer innovative approaches to increase the quality of urban settings, enhance local resilience and promote sustainable lifestyles, and currently the importance of urban greenspaces in an urban ecosystem is being increasingly recognized . There is a need to examine the accuracy of different algorithms for land-cover mapping in order to identify the best classifier for further applications of these areas' observation and preservation.
 
 
+**Project definition - Flow chart**
+![flow](https://user-images.githubusercontent.com/72912247/121817874-50e70980-cc84-11eb-8f9f-8aacc524d110.JPG)
+
+
 **Datasets**
 
 There are plenty of datasets :
 
-Free labeled datasets with satellite images (to be used for training)
-
-- Kaggle satellite image datasets with labeled data
-- Spacenet (17355 images, 5 areas of interest, which are big cities around the world: Rio de Janeiro, Vega, Paris, Shangai, Khartoum)
-
-Free Unlabeled datasets with satellite images (to be used for inference)
+Free Unlabeled datasets with satellite images used :
 
 - Copernicus satellite images (Sentinel1 and 2) : 1 image every 5 or 6 days for 1 given earth location
--
+- Landsat (US) :moderate spatial-resolution (30-meter) imagery that provides large areas of repeated data coverage at a scale that enables users to see detailed human-scale processes, such as urbanization, but not individual houses.
 
 Cartography/map datasets:
 
@@ -37,10 +36,17 @@ Cartography/map datasets:
 - IGN
 - Corine land cover
 
-Datasets opened for education and research purposes:
 
-- Planet
-- Radiant Earth Foundation
+**Methods**
+
+
+
+
+
+
+
+
+
 
 **libraries to be used :**
 

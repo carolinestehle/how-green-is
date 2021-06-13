@@ -43,12 +43,12 @@ Cartography/map datasets:
 
 
 
-##step 1
+## Step 1
 
 
 
 
-##step 2
+## Step 2
 
 **Using OSM to Create sat images and OSD shapes**
 

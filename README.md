@@ -1,15 +1,17 @@
 #
 ## ML with Python Project
 
+# How green is my city ?
+
 ![greenproject](https://user-images.githubusercontent.com/72912247/121811213-02297780-cc64-11eb-9476-6ceffd05d3a8.jpeg)
 
 
-# How green is my city ?
-
-## Introduction​
+## Introduction
 **Project summary **
 
+Why this project ?
 
+Rapid and uncontrolled Urbanization along with economic and industrial development, have increased the rate of land-cover change ,while green areas offer innovative approaches to increase the quality of urban settings, enhance local resilience and promote sustainable lifestyles, and currently the importance of urban greenspaces in an urban ecosystem is being increasingly recognized . There is a need to examine the accuracy of different algorithms for land-cover mapping in order to identify the best classifier for further applications of these areas' observation and preservation.
 
 
 ## Identifying Plant surface on city with satellite images.

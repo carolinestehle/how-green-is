@@ -12,30 +12,10 @@
 This project is about identifying green areas in a given city , the user inputs a city name and it searches for it's GPS coordinates and gives back an appropriate corresponding usable satellite image without clouds from predefined and stored dataset of satellite images, it Selects only the area corresponding to the city limits thanks to cartography data (image superposition), computes and returns the green areas in the city and the ratio of nature from the total area thanks to a machine learning algorithm.
 
 
-![io](https://user-images.githubusercontent.com/72912247/121814302-897ce800-cc70-11eb-8354-e3e5d2dd85be.JPG)
-
-
 **Why this project ?**
 
 Rapid and uncontrolled Urbanization along with economic and industrial development, have increased the rate of land-cover change ,while green areas offer innovative approaches to increase the quality of urban settings, enhance local resilience and promote sustainable lifestyles, and currently the importance of urban greenspaces in an urban ecosystem is being increasingly recognized . There is a need to examine the accuracy of different algorithms for land-cover mapping in order to identify the best classifier for further applications of these areas' observation and preservation.
 
-
-Challenges faced:
-
-Need to learn a lot of things about satellite imagery:
-
-- type of data formats
-- satellite missions (locations covered, frequency of clichés, type of image, spectral characteristics, resolution of images...)
-
-Explore the tools available and learn how to use them (ex: CEREMA tools are now online and free since 2020, Earthpy...)
-
-Identify the appropriate dataset(s) for training
-
-Implement, test and compare various classification algorithms on plant surface, and potentially develop a mixed implementation.
-
-Cross check our results with past data (ex: Corine land cover dataset, geoportail...)
-
-Search how to make the computation efficient (cloud computing, parallelization...)
 
 **Datasets**
 

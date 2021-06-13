@@ -37,14 +37,14 @@ Cartography/map datasets:
 - Corine land cover
 
 
-**Methods Used**
-# implementing UNet:
+# Methods Used**
+**implementing UNet:**
 a convolutional network model classically used for biomedical image segmentation with the Functional API
 ![unet](https://user-images.githubusercontent.com/72912247/121819354-da9ad500-cc8c-11eb-9bb8-3737330143e9.png)
 
 The network consists of a contracting path and an expansive path, which gives it the u-shaped architecture. The contracting path is a typical convolutional network that consists of repeated application of convolutions, each followed by a rectified linear unit (ReLU) and a max pooling operation. During the contraction, the spatial information is reduced while feature information is increased. The expansive pathway combines the feature and spatial information through a sequence of up-convolutions and concatenations with high-resolution features from the contracting path 
 
-# Pixel-Wise Classification Using Deep Neural Networks:
+**Pixel-Wise Classification Using Deep Neural Networks:**
 
 
 

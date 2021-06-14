@@ -20,7 +20,6 @@ Rapid and uncontrolled Urbanization along with economic and industrial developme
 **Project definition - Flow chart**
 ![flow](https://user-images.githubusercontent.com/72912247/121818590-65c59c00-cc88-11eb-8c6d-80f02a92b048.JPG)
 
-
 **Datasets**
 
 There are plenty of datasets :
@@ -46,6 +45,8 @@ Cartography/map datasets:
 **Step 1**
 
 ![step1](https://user-images.githubusercontent.com/72912247/121911112-bd6b1280-cd2f-11eb-97d7-c30af0f82da2.JPG)
+
+link to notebook :
 https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/builtupNeuralNetwork.ipynb
 
 
@@ -67,6 +68,7 @@ https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/built
 
 5.Create a mask of 0 and 1 for green areas of the coordinate area identified above and of the dataframe created on 2 or any other geopandas dataframe with a list of polygons identifing green areas and save as a one band TIF file on google drive.
 
+link to notebook : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Create_sat_images_and_OSD_shapes.ipynb
 
 ![io](https://user-images.githubusercontent.com/72912247/121821733-2a809880-cc9b-11eb-8fe2-20c48ef24d6a.JPG)
 
@@ -80,9 +82,7 @@ a convolutional network model classically used for biomedical image segmentation
 
 The network consists of a contracting path and an expansive path, which gives it the u-shaped architecture. The contracting path is a typical convolutional network that consists of repeated application of convolutions, each followed by a rectified linear unit (ReLU) and a max pooling operation. During the contraction, the spatial information is reduced while feature information is increased. The expansive pathway combines the feature and spatial information through a sequence of up-convolutions and concatenations with high-resolution features from the contracting path 
 
-*Training
-*Inferance insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
-
+Link to notebook :
 
 **Pixel-Wise Classification Using Deep Neural Networks:**
 A basic architecture of the NN 
@@ -91,10 +91,12 @@ A basic architecture of the NN
 Pixel-wise classification is a fundamental task in remote sensing that aims at assigning a semantic
 class, e.g., vegetation, accurately to every individual pixel of an image.
 
+Link to notebook :
 
 
-*Training
-*Inferance insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
+
+
+
 
 **Step 3/ under-construction**
 

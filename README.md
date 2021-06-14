@@ -43,12 +43,12 @@ Cartography/map datasets:
 
 
 
-## Step 1
+**Step 1**
 
 ![step1](https://user-images.githubusercontent.com/72912247/121911112-bd6b1280-cd2f-11eb-97d7-c30af0f82da2.JPG)
 
 
-## Step 2
+**Step 2**
 
 **Using OSM to Create sat images and OSD shapes**
 
@@ -67,7 +67,7 @@ Cartography/map datasets:
 
 
 
-## Machine Learning Models Attempted:
+**Machine Learning Models Attempted:**
 **implementing UNet:**
 a convolutional network model classically used for biomedical image segmentation with the Functional API
 ![unet](https://user-images.githubusercontent.com/72912247/121819354-da9ad500-cc8c-11eb-9bb8-3737330143e9.png)
@@ -90,10 +90,10 @@ class, e.g., vegetation, accurately to every individual pixel of an image.
 *Training
 *Inferance insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
 
+**Step 3**
+
+**Conclusion - Next steps:**
 
 
-## Conclusion - Next steps:
 
-
-
-## Demo-Link:
+**Demo-Link:**

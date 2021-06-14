@@ -48,6 +48,16 @@ Cartography/map datasets:
 
 In this step, we pre-download satellite Sentinel2 images from [Copernicus Open Access Hub](https://scihub.copernicus.eu/dhus/#/home), we crop an area of interest and we use the reconstructed multispectral images for NN training and inference.
 
+
+1.Create shapefile over area of interest, given GPS coodinates.
+
+2.Visualise area of interest with geopandas and folium.
+
+3.Download satellite file corresponding to footprint with Sentinel API.
+
+4.Upsample 20m bands, mask satellite image and create multiband image for training or inference.
+
+
 Links to notebooks :
 
 [Create_shapefile_and_tiff_from_geo_coord.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Create_shapefile_and_tiff_from_geo_coord.ipynb)
@@ -65,13 +75,13 @@ Links to notebooks :
 
 **1.Using OSM to Create sat images and OSD shapes**
 
-1.Receive any coordinate set or place name and get a coordinate set for data download.
+1.Receive any coordinate set or place name and get a coordinate set for data download. 
 
-2.Change the area of interest interactively with folium !!NEW!!
+2.Change the area of interest interactively with folium 
 
-3.Retrieve a geopadas dataframe with a set of polygons or multipolygons of green areas identified in the Open Street Map public database.
+3.Retrieve a geopadas dataframe with a set of polygons or multipolygons of green areas identified in the Open Street Map public database. 
 
-4.Retrieve images from earth engine of of Sentinel 2 Satellites/Landsat8 
+4.Retrieve images of Sentinel2/Landsat8 satellites from Google Earth Engine  
 
 5.Create a mask of 0 and 1 for green areas of the coordinate area identified above and of the dataframe created on 2 or any other geopandas dataframe with a list of polygons identifing green areas and save as a one band TIF file on google drive.
 

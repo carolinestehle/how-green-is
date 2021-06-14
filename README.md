@@ -46,7 +46,7 @@ Cartography/map datasets:
 
 ![step1](https://user-images.githubusercontent.com/72912247/121911112-bd6b1280-cd2f-11eb-97d7-c30af0f82da2.JPG)
 
-
+In this step, we pre-download satellite Sentinel2 images from [Copernicus Open Access Hub](https://scihub.copernicus.eu/dhus/#/home), we crop an area of interest and we use the reconstructed multispectral images for NN training and inference.
 
 Links to notebooks :
 

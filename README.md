@@ -93,11 +93,11 @@ class, e.g., vegetation, accurately to every individual pixel of an image.
 
 Link to notebook : 
 Training :https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_NeuralNetwork_training_step2.ipynb
+
 Inference : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step2.ipynb
 
 
 **Pixel-Wise Classification using K-Nearest Neighbor Classifier (K-NNC) AND Support Vector Machine (SVM)**
-
 
 k-Nearest neighbor classifier is one of the widely used classifiers in machine learning. The main objective of this method is that the data instances of the same class should be closer in the feature space.
 

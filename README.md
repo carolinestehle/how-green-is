@@ -56,7 +56,7 @@ https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/built
 
 **Step 2**
 
-**Using OSM to Create sat images and OSD shapes**
+**1.Using OSM to Create sat images and OSD shapes**
 
 1.Receive any coordinate set or place name and get a coordinate set for data download.
 
@@ -74,7 +74,7 @@ link to notebook : https://github.com/how-green-is-my-city/how-green-is/blob/mas
 
 
 
-## Testing different ML and DL algorithms:
+**2.Testing different ML and DL algorithms:**
 
 **implementing UNet:**
 a convolutional network model classically used for biomedical image segmentation with the Functional API

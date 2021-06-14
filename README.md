@@ -50,13 +50,13 @@ In this step, we pre-download satellite Sentinel2 images from [Copernicus Open A
 
 Links to notebooks :
 
-https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Create_shapefile_and_tiff_from_geo_coord.ipynb
+[Create_shapefile_and_tiff_from_geo_coord.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Create_shapefile_and_tiff_from_geo_coord.ipynb)
 
-https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_NeuralNetwork_training_step1.ipynb
+[HG_NeuralNetwork_training_step1.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_NeuralNetwork_training_step1.ipynb)
 
-https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step1.ipynb
+[HG_inference_step1.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step1.ipynb)
 
-https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step1_bis.ipynb
+[HG_inference_step1_bis.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step1_bis.ipynb)
 
 
 
@@ -75,7 +75,7 @@ https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_in
 
 5.Create a mask of 0 and 1 for green areas of the coordinate area identified above and of the dataframe created on 2 or any other geopandas dataframe with a list of polygons identifing green areas and save as a one band TIF file on google drive.
 
-link to notebook : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Create_sat_images_and_OSD_shapes.ipynb
+link to notebook : [Create_sat_images_and_OSD_shapes.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Create_sat_images_and_OSD_shapes.ipynb)
 
 ![io](https://user-images.githubusercontent.com/72912247/121821733-2a809880-cc9b-11eb-8fe2-20c48ef24d6a.JPG)
 
@@ -93,9 +93,10 @@ Pixel-wise classification is a fundamental task in remote sensing that aims at a
 class, e.g., vegetation, accurately to every individual pixel of an image.
 
 Links to notebooks : 
-Training :https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_NeuralNetwork_training_step2.ipynb
 
-Inference : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step2.ipynb
+[HG_NeuralNetwork_training_step2.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_NeuralNetwork_training_step2.ipynb)
+
+[HG_inference_step2.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step2.ipynb)
 
 
 **implementing UNet:**
@@ -116,7 +117,7 @@ k-Nearest neighbor classifier is one of the widely used classifiers in machine l
 
 The support vector machine (SVM) is a supervised learning method that generates input-output mapping functions from a set of labeled training data. The mapping function can be either a classification function, i.e., the category of the input data, or a regression function.
 
-Link to notebook : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Pixel_Classification_in_Satellite_Imagery_KNN%2C_SVM%20(1).ipynb
+Link to notebook : [Pixel_Classification_in_Satellite_Imagery_KNN_SVM.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Pixel_Classification_in_Satellite_Imagery_KNN%2C_SVM%20(1).ipynb)
 
 
 ## Step 3 (Combination of algorithms and techniques)/ under-construction**
@@ -126,3 +127,11 @@ Link to notebook : https://github.com/how-green-is-my-city/how-green-is/blob/mas
 
 
 **Demo-Link:**
+
+
+
+## References
+
+[Satellite imagery access and analysis in Python & Jupyter notebooks](https://towardsdatascience.com/satellite-imagery-access-and-analysis-in-python-jupyter-notebooks-387971ece84b)
+
+[Neural Network for Satellite Data Classification Using Tensorflow in Python](https://towardsdatascience.com/neural-network-for-satellite-data-classification-using-tensorflow-in-python-a13bcf38f3e1)

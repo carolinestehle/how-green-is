@@ -74,7 +74,7 @@ link to notebook : https://github.com/how-green-is-my-city/how-green-is/blob/mas
 
 
 
-**Testing different ML and DL algorithms:**
+## Testing different ML and DL algorithms:
 
 **implementing UNet:**
 a convolutional network model classically used for biomedical image segmentation with the Functional API
@@ -96,14 +96,15 @@ Training :https://github.com/how-green-is-my-city/how-green-is/blob/master/noteb
 Inference : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step2.ipynb
 
 
-**K-Nearest Neighbor Classifier (K-NNC) AND Support Vector Machine (SVM)**
+**Pixel-Wise Classification using K-Nearest Neighbor Classifier (K-NNC) AND Support Vector Machine (SVM)**
 
-![KNN](https://user-images.githubusercontent.com/72912247/121917967-e55d7480-cd35-11eb-90b9-c16478a0920b.JPG)
+
 k-Nearest neighbor classifier is one of the widely used classifiers in machine learning. The main objective of this method is that the data instances of the same class should be closer in the feature space.
 
-![SVM](https://user-images.githubusercontent.com/72912247/121918661-9106c480-cd36-11eb-8952-d65186f6b898.JPG)
 The support vector machine (SVM) is a supervised learning method that generates input-output mapping functions from a set of labeled training data. The mapping function can be either a classification function, i.e., the category of the input data, or a regression function.
+
 Link to notebook : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Pixel_Classification_in_Satellite_Imagery_KNN%2C_SVM%20(1).ipynb
+
 
 **Step 3 (Combination of algorithms and techniques)/ under-construction**
 

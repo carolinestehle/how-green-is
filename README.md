@@ -91,14 +91,13 @@ A basic architecture of the NN
 Pixel-wise classification is a fundamental task in remote sensing that aims at assigning a semantic
 class, e.g., vegetation, accurately to every individual pixel of an image.
 
-Link to notebook :
+Link to notebook : 
+Training :https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_NeuralNetwork_training_step2.ipynb
+Inference : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step2.ipynb
 
 
 
-
-
-
-**Step 3/ under-construction**
+**Step 3 (Combination of algorithms and techniques)/ under-construction**
 
 **Conclusion - Next steps:**
 

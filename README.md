@@ -67,7 +67,7 @@ Cartography/map datasets:
 
 
 
-**Machine Learning Models Attempted:**
+**Testing different ML and DL algorithms:**
 
 **implementing UNet:**
 a convolutional network model classically used for biomedical image segmentation with the Functional API
@@ -91,7 +91,7 @@ class, e.g., vegetation, accurately to every individual pixel of an image.
 *Training
 *Inferance insert results (accuracy/loss/confusin matrix) / input image-predicted image .........
 
-**Step 3**
+**Step 3/ under-construction**
 
 **Conclusion - Next steps:**
 

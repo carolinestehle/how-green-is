@@ -46,10 +46,17 @@ Cartography/map datasets:
 
 ![step1](https://user-images.githubusercontent.com/72912247/121911112-bd6b1280-cd2f-11eb-97d7-c30af0f82da2.JPG)
 
-Link to notebook :
-https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/builtupNeuralNetwork.ipynb
 
 
+Links to notebooks :
+
+https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Create_shapefile_and_tiff_from_geo_coord.ipynb
+
+https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_NeuralNetwork_training_step1.ipynb
+
+https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step1.ipynb
+
+https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step1_bis.ipynb
 
 
 
@@ -74,7 +81,22 @@ link to notebook : https://github.com/how-green-is-my-city/how-green-is/blob/mas
 
 
 
+
+
 **2.Testing different ML and DL algorithms:**
+
+**Pixel-Wise Classification Using Deep Neural Networks:**
+A basic architecture of the NN 
+![bands](https://user-images.githubusercontent.com/72912247/121820860-4a14c280-cc95-11eb-8648-6ab28852ba7d.jpeg)
+
+Pixel-wise classification is a fundamental task in remote sensing that aims at assigning a semantic
+class, e.g., vegetation, accurately to every individual pixel of an image.
+
+Links to notebooks : 
+Training :https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_NeuralNetwork_training_step2.ipynb
+
+Inference : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step2.ipynb
+
 
 **implementing UNet:**
 a convolutional network model classically used for biomedical image segmentation with the Functional API
@@ -84,17 +106,8 @@ The network consists of a contracting path and an expansive path, which gives it
 
 Link to notebook :
 
-**Pixel-Wise Classification Using Deep Neural Networks:**
-A basic architecture of the NN 
-![bands](https://user-images.githubusercontent.com/72912247/121820860-4a14c280-cc95-11eb-8648-6ab28852ba7d.jpeg)
 
-Pixel-wise classification is a fundamental task in remote sensing that aims at assigning a semantic
-class, e.g., vegetation, accurately to every individual pixel of an image.
 
-Link to notebook : 
-Training :https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_NeuralNetwork_training_step2.ipynb
-
-Inference : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/HG_inference_step2.ipynb
 
 
 **Pixel-Wise Classification using K-Nearest Neighbor Classifier (K-NNC) AND Support Vector Machine (SVM)**

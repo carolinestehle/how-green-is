@@ -42,7 +42,7 @@ Cartography/map datasets:
 
 
 
-**Step 1**
+# Step 1
 
 ![step1](https://user-images.githubusercontent.com/72912247/121911112-bd6b1280-cd2f-11eb-97d7-c30af0f82da2.JPG)
 
@@ -54,7 +54,7 @@ https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/built
 
 
 
-**Step 2**
+# Step 2
 
 **1.Using OSM to Create sat images and OSD shapes**
 
@@ -106,7 +106,7 @@ The support vector machine (SVM) is a supervised learning method that generates 
 Link to notebook : https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Pixel_Classification_in_Satellite_Imagery_KNN%2C_SVM%20(1).ipynb
 
 
-**Step 3 (Combination of algorithms and techniques)/ under-construction**
+# Step 3 (Combination of algorithms and techniques)/ under-construction**
 
 **Conclusion - Next steps:**
 

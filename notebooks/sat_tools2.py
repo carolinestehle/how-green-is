@@ -253,6 +253,7 @@ def folium_preview(base_file, preview_files, show_lst=[], place_area=None):
   for year, _, img in preview_files:
     show = False
     if int(year) in show_lst:
+        show = True
         print("loading prediction image for year " + year)    
         with rasterio.open(img) as pred_labels:
             folium.raster_layers.ImageOverlay(

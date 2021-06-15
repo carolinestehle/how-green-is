@@ -46,7 +46,7 @@ def get_area(place_name, crs_type):
       place_area = ox.geocoder.geocode_to_gdf(place_name)
       print('Got the following place: ' + place_area.display_name[0])
       area_name = place_area.display_name[0].replace(' ','_').replace(',','').replace("'","")
-      area_name = 'pred_'+unidecode.unidecode(area_name)[:80]
+      area_name = unidecode.unidecode(area_name)[:80]
       place_area.to_crs(crs=crs_type, inplace=True)
       return area_name, place_area
     except:

@@ -221,7 +221,7 @@ def image_dowload(place_path, area_name, year, bounds, force_update=False):
 def folium_preview(base_file, preview_files, show_lst=[], place_area=None):
   # Final review of the labels over detailed sat images
   # Center the map at the center of the area of interest, thanks to latitude and longitude coordinates:
-  m = folium.Map(height=500, tiles = 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}')
+  m = folium.Map(height=500)
 
   tile = folium.TileLayer(
           tiles = 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
@@ -229,8 +229,7 @@ def folium_preview(base_file, preview_files, show_lst=[], place_area=None):
           name = 'Google Satellite',
           overlay = True,
           control = True,
-          show = False,
-          opacity= 0.8
+          opacity= 0.7
         ).add_to(m)
 
   _ , _ , file_path = preview_files[0]

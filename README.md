@@ -6,7 +6,7 @@
 ## Identifying Plant surface on a city with satellite images.
 
 ![greenproject](https://user-images.githubusercontent.com/72912247/121811213-02297780-cc64-11eb-9476-6ceffd05d3a8.jpeg)
-
+Photo by Paulo Simões Mendes on Unsplash
 
 **Description**
 This project is about identifying green areas in a given city , the user inputs a city name and it searches for it's GPS coordinates and gives back an appropriate corresponding usable satellite image without clouds from predefined and stored dataset of satellite images, it Selects only the area corresponding to the city limits thanks to cartography data (image superposition), computes and returns the green areas in the city and the ratio of nature from the total area thanks to a machine learning algorithm.
@@ -145,3 +145,6 @@ Link to notebook : [Pixel_Classification_in_Satellite_Imagery_KNN_SVM.ipynb](htt
 [Satellite imagery access and analysis in Python & Jupyter notebooks](https://towardsdatascience.com/satellite-imagery-access-and-analysis-in-python-jupyter-notebooks-387971ece84b)
 
 [Neural Network for Satellite Data Classification Using Tensorflow in Python](https://towardsdatascience.com/neural-network-for-satellite-data-classification-using-tensorflow-in-python-a13bcf38f3e1)
+
+https://towardsdatascience.com/land-cover-classification-in-satellite-imagery-using-python-ae39dbf2929
+

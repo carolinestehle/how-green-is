@@ -7,6 +7,7 @@ import rasterio
 import numpy as np
 import unidecode
 import folium
+from rasterio.mask import mask
 
 import tensorflow as tf
 from focal_loss import SparseCategoricalFocalLoss

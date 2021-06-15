@@ -255,16 +255,16 @@ def folium_preview(base_file, preview_files, show_lst=[], place_area=None):
     if int(year) in show_lst:
         print("loading prediction image for year " + year)    
         with rasterio.open(img) as pred_labels:
-        folium.raster_layers.ImageOverlay(
-            name='Predicted labels for year ' + year,
-            image=pred_labels.read(1),
-            bounds=bounds,
-            opacity=0.4,
-            interactive=True,
-            show=show,
-            cross_origin=False,
-            colormap=lambda x: (0, 1, 0, x),
-        ).add_to(m)
+            folium.raster_layers.ImageOverlay(
+                name='Predicted labels for year ' + year,
+                image=pred_labels.read(1),
+                bounds=bounds,
+                opacity=0.4,
+                interactive=True,
+                show=show,
+                cross_origin=False,
+                colormap=lambda x: (0, 1, 0, x),
+            ).add_to(m)
   
   if (place_area is not None):
     folium.GeoJson(place_area, style_function=lambda x: {'fillColor': '#00000000'}, name="Area contour").add_to(m)

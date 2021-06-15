@@ -85,7 +85,7 @@ Links to notebooks :
 
 5.Create a mask of 0 and 1 for green areas of the coordinate area identified above and of the dataframe created on 2 or any other geopandas dataframe with a list of polygons identifing green areas and save as a one band TIF file on google drive.
 
-link to notebook : [Create_sat_images_and_OSD_shapes.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Create_sat_images_and_green_areas_labels_(with_predict).ipynb)
+link to notebook : [Create_sat_images_and_green_areas_labels_(with_predict).ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Create_sat_images_and_green_areas_labels_(with_predict).ipynb)
 
 ![io](https://user-images.githubusercontent.com/72912247/121821733-2a809880-cc9b-11eb-8fe2-20c48ef24d6a.JPG)
 

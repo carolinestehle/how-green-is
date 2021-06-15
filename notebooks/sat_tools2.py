@@ -32,8 +32,9 @@ def gdrive_ee_auth():
     ee.Authenticate()
     ee.Initialize()
 
-def get_area(place_name):
+def get_area(place_name, crs_type):
     """Receives any string, queries the string using OSM Nominating API (https://nominatim.org/release-docs/latest/api/Search/) and returns an geopandas dataframe with the area geometry and area name, formated such that it can be used as unique folder name to get images downloaded from Earth Engine directly to Google drive.
+    Sets the coordinate reference system as crs_type given as input.
     Returns 'None' if the query fails to find any results"""
 
     # search the place area, based on the given name and return bonds and exterior geometrys

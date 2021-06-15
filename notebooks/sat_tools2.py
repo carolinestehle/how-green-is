@@ -128,7 +128,7 @@ def crop_area(src_image, geometry):
   with rasterio.open(src_image, "w", **out_meta) as dest:
     dest.write(out_image)
 
-def force_dirs(dirs, delete_existent=True):
+def force_dirs(dirs, delete_existent=False):
   """Forces the creation of a list of folders given as input if they don't exist. If delete_existent is True, the existing contents of the folders are deleted"""
   for d in dirs:
         if not os.path.exists(d):
@@ -241,7 +241,8 @@ def folium_preview(base_file, preview_files, show_lst=[], place_area=None):
       #returns [west, south, east, north bounds], convert to folium format: [[N_lat, W_long], [S_lat, E_long]]
       bounds = [[bounds[3], bounds[0]], [bounds[1], bounds[2]]]
       folium.raster_layers.ImageOverlay(
-          name='Original Satellite Image (last year)',
+          name='Original Image',
+          attr='Sentinel 2 Satellite Images',
           image=np.transpose(base_img.read((1,2,3)),(1,2,0)),
           bounds=bounds,
           opacity=1,
@@ -252,22 +253,21 @@ def folium_preview(base_file, preview_files, show_lst=[], place_area=None):
   for year, _, img in preview_files:
     show = False
     if int(year) in show_lst:
-      show = True 
-    print("loading prediction image for year " + year)    
-    with rasterio.open(img) as pred_labels:
-      folium.raster_layers.ImageOverlay(
-          name='Predicted labels for year ' + year,
-          image=pred_labels.read(1),
-          bounds=bounds,
-          opacity=0.25,
-          interactive=True,
-          show=show,
-          cross_origin=False,
-          colormap=lambda x: (0, 1, 0, x),
-      ).add_to(m)
+        print("loading prediction image for year " + year)    
+        with rasterio.open(img) as pred_labels:
+        folium.raster_layers.ImageOverlay(
+            name='Predicted labels for year ' + year,
+            image=pred_labels.read(1),
+            bounds=bounds,
+            opacity=0.4,
+            interactive=True,
+            show=show,
+            cross_origin=False,
+            colormap=lambda x: (0, 1, 0, x),
+        ).add_to(m)
   
   if (place_area is not None):
-    folium.GeoJson(place_area, style_function=lambda x: {'fillColor': '#00000000'}).add_to(m)
+    folium.GeoJson(place_area, style_function=lambda x: {'fillColor': '#00000000'}, name="Area contour").add_to(m)
  
   m.add_child(folium.LayerControl())
  

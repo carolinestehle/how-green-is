@@ -2,6 +2,7 @@ import os
 import shutil
 import random
 import matplotlib.pyplot as plt
+import ee
 import osmnx as ox
 import rasterio 
 import numpy as np
@@ -147,7 +148,7 @@ def check_area(df, max_area):
         print('You can also ignore this, just be prepared to whait a long time and get large files...')
     return scale
 
-def image_dowload(place_path, area_name, year, bounds, force_update=False):
+def image_dowload(place_path, area_name, year, bounds, crs_type, force_update=False):
   """starts a task on google earth engine that will download an composite satellite image from sentinel2 dataset
     place_path: root folder were the images will be downloaded. This path must exist in google drive, if not the image will be downloaded in the root folder of google drive.
     area_name: Unique name for the area. A folder will be created with this name in the place_path, if not existent

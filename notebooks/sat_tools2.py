@@ -1,3 +1,37 @@
+import os
+import shutil
+import random
+import matplotlib.pyplot as plt
+import osmnx as ox
+import rasterio 
+import numpy as np
+import unidecode
+import folium
+
+import tensorflow as tf
+from focal_loss import SparseCategoricalFocalLoss
+
+from rasterio.plot import show
+from rasterio.windows import Window
+
+from itertools import product
+
+def gdrive_ee_auth():
+  """ Performs authentication on google drive and google earth engine if not done yet""" 
+
+  from google.colab import drive
+  drive.mount('/content/drive')
+
+  # Earth Engine Python API
+
+  import ee 
+  # Initialize Earth Engine and athenticate to your GEE account if not done yet.
+  try: 
+    ee.Initialize()
+  except:
+    ee.Authenticate()
+    ee.Initialize()
+
 def get_area(place_name):
     """Receives any string, queries the string using OSM Nominating API (https://nominatim.org/release-docs/latest/api/Search/) and returns an geopandas dataframe with the area geometry and area name, formated such that it can be used as unique folder name to get images downloaded from Earth Engine directly to Google drive.
     Returns 'None' if the query fails to find any results"""

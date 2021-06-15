@@ -8,7 +8,8 @@ import rasterio
 import numpy as np
 import unidecode
 import folium
-from rasterio.mask import mask
+
+from rasterio import features, mask, windows
 
 import tensorflow as tf
 from focal_loss import SparseCategoricalFocalLoss
@@ -148,13 +149,15 @@ def check_area(df, max_area):
         print('You can also ignore this, just be prepared to whait a long time and get large files...')
     return scale
 
-def image_dowload(place_path, area_name, year, bounds, crs_type, force_update=False):
+def image_dowload(place_path, area_name, year, bounds, crs_type, force_update=False, band_sel = ('B5', 'B4', 'B2')):
   """starts a task on google earth engine that will download an composite satellite image from sentinel2 dataset
     place_path: root folder were the images will be downloaded. This path must exist in google drive, if not the image will be downloaded in the root folder of google drive.
     area_name: Unique name for the area. A folder will be created with this name in the place_path, if not existent
     year: An average of all the sat images with cloud pixel prct less that 2 withing the given year will be created.Accepted years are from 2015 to 2021
     bounds: The bounds of the image to get retrived
+    band_sel: Sentinel2 Bands to download
     force_update: If False, if an image already exists on the folder, the download is skipped. 
+    Returns the image path
   """
   start_date = year+'-01-01'
   end_date = year+'-12-31'
@@ -169,7 +172,7 @@ def image_dowload(place_path, area_name, year, bounds, crs_type, force_update=Fa
   image_collection_ref = "COPERNICUS/S2"
   min_cloud_cov = 2
   cloud_cover_ref = "CLOUDY_PIXEL_PERCENTAGE"
-  band_sel = ('B5', 'B4', 'B2')
+  
 
 
   #if the satellite file does not exists on google drive, perform the download from Earth Engine
@@ -360,3 +363,52 @@ def predict_with_tile(input_file, output_file, model, temp_dir = 'tmp_tiles/', t
 
   pred_green = np.sum(full_pred)/(np.size(full_pred))
   return pred_green
+
+def norm(arr):
+        """Recives a numpy array and return normalized value scaled and as type utin16"""
+        max = np.max(arr)
+        min = np.min(arr)
+        arr = (arr - min)/(max-min)
+        arr= (65535*arr).astype('uint16')
+        return arr
+
+def bandstack(b1, b2, b3):
+    """receives any 3 arrays (bands) and returns a normalized and stacked array of the 3 bands"""  
+    b1 = b1.reshape((b1.shape[0], b1.shape[1], 1))
+    b2 = b2.reshape((b2.shape[0], b2.shape[1], 1))
+    b3 = b3.reshape((b3.shape[0], b3.shape[1], 1))
+    stack = np.dstack((b1, b2, b3))
+    stack=norm(stack)
+    return stack
+
+def save_stack(stack, stack_file, src_prf, channels, force_overwrite=False):
+    """Receives an array image (stack), a file path, 
+    a reference to the original image metadata, and the number of channels to save 
+    If force_overwrite is True if file does not exists"""
+
+    stack_t = stack.transpose(2,0,1)
+    if ((not os.path.exists(stack_file)) or force_overwrite):
+      stack_out=rasterio.open(stack_file, 'w', driver='Gtiff',
+                                width=src_prf.width, height=src.height,
+                                count=channels,
+                                crs=src_prf.crs,
+                                transform=src_prf.transform,
+                                dtype='uint16')
+      stack_out.write(stack_t)
+      stack_out.close()
+
+def save_label(geo, src_prf, file_path, class_dict):
+    """Receives a geopandas dataset, a reference image metadata, a file path to save and a class dictionary
+    And burns the dataset on a tiff file according to the corresponding name vale on the dataset"""
+    src_prf.update(dtype=rasterio.uint8, count=1, driver='Gtiff')
+
+    #convert the class identifier column to type integer
+    geo['id']  = geo.name.map(class_dict)
+    # pair the geometries and their integer class values
+    shapes = ((geom,value) for geom, value in zip(geo.geometry, geo.id))
+  
+    labels = features.rasterize(shapes=shapes, out_shape=(src_prf['height'], src_prf['width']), transform=src_prf['transform'], fill=0, all_touched=True, dtype=rasterio.uint8)
+
+    print("Values in labeled image: ", np.unique(labels))
+    with rasterio.open(file_path, 'w', **src_prf) as labels_out:
+        labels_out.write(labels.astype(rasterio.uint8), 1) # write band 1 in tif file

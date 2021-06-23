@@ -54,6 +54,8 @@ def extractFile(path,dest):
   #checking if the folder zip exists
   assert os.path.exists(dest) == True
 
+import rasterio
+
 def crop_area(src, area_shape, fileout):
   '''
   Crop a multispectral image given a shape as input. Write result in a file.

@@ -126,11 +126,7 @@ The support vector machine (SVM) is a supervised learning method that generates 
 Link to notebook : [Pixel_Classification_in_Satellite_Imagery_KNN_SVM.ipynb](https://github.com/how-green-is-my-city/how-green-is/blob/master/notebooks/Pixel_Classification_in_Satellite_Imagery_KNN%2C_SVM%20(1).ipynb)
 
 
-## Step 3 (Combination of algorithms and techniques)/ under-construction**
-
-**Conclusion - Next steps:**
-To complete
-
+## Step 3 (Combination of algorithms and techniques)
 
 **Demo-Link:**
 ***Demo of the UNet model***

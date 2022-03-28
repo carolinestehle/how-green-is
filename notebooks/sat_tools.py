@@ -1,11 +1,14 @@
+import os
+import zipfile
+import numpy as np
 # The Python Shapefile Library (PyShp) reads and writes ESRI Shapefiles in pure Python
-try:
-    import shapefile
-except:
-    from ModuleInstaller import installModule
-    installModule("pyshp")
-    import shapefile
+import shapefile
+from shapely.geometry import Point
+import rasterio
+from rasterio.plot import show
+from rasterio.warp import calculate_default_transform, reproject, Resampling
 
+    
 '''
 Adding a Polygon shape
 reference tutorial: https://pypi.org/project/pyshp/#writing-shapefiles
@@ -35,16 +38,12 @@ def create_shapefile_from_geo_coordinates(filename, fieldname, N_lat, S_lat, W_l
    w.record('polygon1')
    w.close()
 
-from shapely.geometry import Point
 
 def create_list_of_points_from_geo_coordinates(N_lat, S_lat, W_long, E_long):
    # create a simple list of polygon points corresponding to GPS coordinates of the area of interest
    # Latitude and longitude of area of interest can be found with www.openstreetmap.org -> Export
    return (Point(W_long, N_lat), Point(E_long, N_lat), Point(E_long, S_lat), Point(W_long, S_lat))
 
-
-import os
-import zipfile
 
 def extractFile(path,dest):
   '''function to extract zip file'''
@@ -54,7 +53,6 @@ def extractFile(path,dest):
   #checking if the folder zip exists
   assert os.path.exists(dest) == True
 
-import rasterio
 
 def crop_area(src, area_shape, fileout):
   '''
@@ -76,8 +74,6 @@ def crop_area(src, area_shape, fileout):
   with rasterio.open(fileout, "w", **out_meta) as dest:
     dest.write(out_image)
 
-
-from rasterio.warp import calculate_default_transform, reproject, Resampling
 
 def change_image_projection(filename, outfilename, dst_crs):
   '''Function comes from here:
@@ -106,3 +102,63 @@ def change_image_projection(filename, outfilename, dst_crs):
                 dst_transform=transform,
                 dst_crs=dst_crs,
                 resampling=Resampling.nearest)
+
+
+def plot_RGB_raster(image_name, scaling_method="pct", pct=[2,90], std_factor=2, nodataval=0, show_histogram=False):
+    ''' Plot nicely RGB raster images. 
+        Perform rescaling with chosen scaling method '''
+        
+    src = rasterio.open(image_name)
+    image = src.read()
+    
+    if show_histogram:
+        # Plot histogram to visualize distribution of image rasters
+        # https://gis.stackexchange.com/questions/373653/checking-distribution-of-raster-layer-using-arcgis-desktop
+        show_hist(src, bins=50, lw=0.0, stacked=False, alpha=0.3,
+                   histtype='stepfilled', title="Histogram")
+        
+    if scaling_method=="min_max":
+        # Min max scaling
+        im_min = image.min()
+        im_max = image.max()
+    elif scaling_method=="std":
+        # Standard deviation scaling
+        im_mean = image.mean()
+        im_std = image.std()
+        im_min = im_mean - std_factor*im_std
+        im_max = im_mean + std_factor*im_std
+    elif scaling_method=="pct":
+        # Percentile scaling
+        im_min = np.nanpercentile(image,pct[0])
+        im_max = np.nanpercentile(image,pct[1])
+
+    # Rescaling with min max
+    clip = (image - im_min) / (im_max - im_min)
+    # Clip to [0, 1]
+    clip[clip>1] = 1
+    clip[clip<0] = 0
+    
+    # Plot resulting image
+    show(clip)
+    
+   
+def resample_image(src, upscale_factor=2):
+    ''' Apply a resampling transformation to image raster.
+        reference code from https://rasterio.readthedocs.io/en/latest/topics/resampling.html
+    '''
+    # resample data to target shape
+    data = src.read(
+        out_shape=(
+            src.count,
+            int(src.height * upscale_factor),
+            int(src.width * upscale_factor)
+        ),
+        resampling=Resampling.bilinear
+    )
+
+    # scale image transform
+    transform = src.transform * src.transform.scale(
+        (src.width / data.shape[-1]),
+        (src.height / data.shape[-2])
+    )
+    return [data, transform]
